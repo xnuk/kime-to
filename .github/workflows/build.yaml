@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - run: rustup install stable && rust up default stable
+    - run: rustup install stable && rustup default stable
     - run: cargo build --release
     - name: copy kime-to
       run: >
