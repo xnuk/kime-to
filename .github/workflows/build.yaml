@@ -1,0 +1,15 @@
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+    - uses: mlugg/setup-zig@v1
+      with:
+        version: 0.13.0
+    - run: zig build
+    - uses: actions/upload-artifact@v4
+      with:
+        path: zig-out/bin/kime-to
+        name: kime-to
